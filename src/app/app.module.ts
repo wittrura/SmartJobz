@@ -6,10 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DisplayFilterComponent } from './display-filter/display-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SidebarComponent,
+    NavbarComponent,
+    DisplayFilterComponent,
   ],
   imports: [
     NgbModule.forRoot(),

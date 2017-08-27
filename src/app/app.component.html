@@ -1,45 +1,25 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+<app-navbar></app-navbar>
 
-  <div class="collapse navbar-collapse" [ngbCollapse]="isCollapsed" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-<main>
+<div class="container">
+  <!-- top filtering for using to affect main contant -->
   <div class="row">
     <div class="col-12">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Filter by Companies</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Filter by Job Roles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Filter by Skills</a>
-        </li>
-      </ul>
+      <app-display-filter></app-display-filter>
     </div>
   </div>
-</main>
+  <!-- side navigation for entering new companies, jobs, skills -->
+  <div class="row">
+    <div class="col-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-9">
+      <!-- main content to display user requested info  -->
+      <main>
+
+      </main>
+    </div>
+  </div>
+</div>
 <!-- <div class="jumbotron">
   <div class="container">
     <ngb-alert type="success" [dismissible]="false">
