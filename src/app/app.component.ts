@@ -16,12 +16,13 @@ export class AppComponent implements OnInit {
   title = 'app works!';
 
   skills: Skill[];
+
   public isCollapsed = true;
 
   constructor(private skillService: SkillService) { }
 
   getSkills(): void {
-    this.skills = this.skillService.getSkills();
+    this.skillService.getSkills().then(skills => this.skills = skills);
   }
 
   ngOnInit(): void {

@@ -6,8 +6,8 @@ import { SKILLS } from '../mocks';
 @Injectable()
 export class SkillService {
 
-  getSkills(): Skill[] {
-    return SKILLS;
+  getSkills(): Promise<Skill[]> {
+    return Promise.resolve(SKILLS);
   }
 
 }
