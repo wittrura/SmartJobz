@@ -6,9 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayFilterComponent } from './display-filter/display-filter.component';
+
+import { SkillsComponent } from './skills/skills.component';
+import { JobRolesComponent } from './job-roles/job-roles.component';
+import { CompaniesComponent } from './companies/companies.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +21,9 @@ import { DisplayFilterComponent } from './display-filter/display-filter.componen
     SidebarComponent,
     NavbarComponent,
     DisplayFilterComponent,
+    SkillsComponent,
+    JobRolesComponent,
+    CompaniesComponent,
   ],
   imports: [
     NgbModule.forRoot(),
