@@ -11,17 +11,23 @@ export const SKILLS: Skill[] = [
 ];
 
 export const COMPANIES: Company[] = [
-  {id: 6, name: 'HomeAway'},
-  {id: 7, name: 'Main Street Hub'},
-  {id: 8, name: 'Duo Security'},
-  {id: 9, name: 'Conde Nast'},
-  {id: 10, name: 'BigCommerce'},
+  {id: 6, name: 'HomeAway', notes: 'Recently announced new CTO, $10MM total funded'},
+  {id: 7, name: 'Main Street Hub', notes: 'Based in Austin'},
+  {id: 8, name: 'Duo Security', notes: 'Secruity firm'},
+  {id: 9, name: 'Conde Nast', notes: 'Dan DeGreef - engineer'},
+  {id: 10, name: 'BigCommerce', notes: 'Values work-life balance'},
 ];
 
+// export const COMPANIES: Company[] = [
+//   {id: 1, name: 'Full-Stack Engineer'},
+//   {id: 2, name: 'Backend Engineer'},
+//   {id: 3, name: 'QA Tester'},
+//   {id: 4, name: 'Customer Solutions Engineer'}
+// ];
+
 export const ROLES: Role[] = [
-  {id: 6, name: 'HomeAway'},
-  {id: 7, name: 'Main Street Hub'},
-  {id: 8, name: 'Duo Security'},
-  {id: 9, name: 'Conde Nast'},
-  {id: 10, name: 'BigCommerce'},
+  {id: 1, name: 'Full-Stack Engineer'},
+  {id: 2, name: 'Backend Engineer'},
+  {id: 3, name: 'QA Tester'},
+  {id: 4, name: 'Customer Solutions Engineer'}
 ];

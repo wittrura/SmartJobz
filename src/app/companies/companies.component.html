@@ -1,4 +1,18 @@
 <h2>Companies</h2>
 <ul class="list-group">
-  <li *ngFor="let company of companies" class="list-group-item">{{ company.name }}</li>
+  <li *ngFor="let company of companies" class="list-group-item
+  list-group-item-action flex-column align-items-start">
+    <div class="d-flex">
+      {{ company.name }}
+    </div>
+    <p class="mb-1">{{ company.notes }}</p>
+  </li>
 </ul>
+<!-- <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="list-group">
+  <ngb-panel *ngFor="let company of companies" title="{{ company.name }}"
+  class="list-group-item list-group-item-action">
+    <ng-template ngbPanelContent>
+      <p>{{ company.notes }}</p>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion> -->
