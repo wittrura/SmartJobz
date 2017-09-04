@@ -13,11 +13,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayFilterComponent } from './display-filter/display-filter.component';
 
 import { SkillsComponent } from './skills/skills.component';
-import { JobRolesComponent } from './job-roles/job-roles.component';
+import { RolesComponent } from './roles/roles.component';
 import { CompaniesComponent } from './companies/companies.component';
 
 import { SkillService } from './skills/skill.service';
 import { CompanyService } from './companies/company.service';
+import { RoleService } from './roles/role.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CompanyService } from './companies/company.service';
     NavbarComponent,
     DisplayFilterComponent,
     SkillsComponent,
-    JobRolesComponent,
+    RolesComponent,
     CompaniesComponent,
   ],
   imports: [
@@ -37,7 +38,7 @@ import { CompanyService } from './companies/company.service';
       },
       {
         path: 'roles',
-        component: JobRolesComponent
+        component: RolesComponent
       },
       {
         path: 'companies',
@@ -56,7 +57,8 @@ import { CompanyService } from './companies/company.service';
   ],
   providers: [
     SkillService,
-    CompanyService
+    CompanyService,
+    RoleService
   ],
   bootstrap: [AppComponent]
 })
