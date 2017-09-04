@@ -17,6 +17,7 @@ import { JobRolesComponent } from './job-roles/job-roles.component';
 import { CompaniesComponent } from './companies/companies.component';
 
 import { SkillService } from './skills/skill.service';
+import { CompanyService } from './companies/company.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,10 @@ import { SkillService } from './skills/skill.service';
     FormsModule,
     HttpModule
   ],
-  providers: [SkillService],
+  providers: [
+    SkillService,
+    CompanyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
