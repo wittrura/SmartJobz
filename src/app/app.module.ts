@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DisplayFilterComponent } from './display-filter/display-filter.component';
@@ -28,6 +29,25 @@ import { SkillService } from './skills/skill.service';
     CompaniesComponent,
   ],
   imports: [
+    RouterModule.forRoot([
+      {
+        path: 'skills',
+        component: SkillsComponent
+      },
+      {
+        path: 'roles',
+        component: JobRolesComponent
+      },
+      {
+        path: 'companies',
+        component: CompaniesComponent
+      }
+      // {
+      //   path: '',
+      //   redirectTo: '/skills',
+      //   pathMatch: ''
+      // }
+    ]),
     NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
