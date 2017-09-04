@@ -1,32 +1,11 @@
 import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
-
-import { Skill } from './skills/skill';
-
-import { SkillService } from './skills/skill.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [SkillService]
+  styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  title = 'app works!';
-
-  skills: Skill[];
-
-  public isCollapsed = true;
-
-  constructor(private skillService: SkillService) { }
-
-  getSkills(): void {
-    this.skillService.getSkills().then(skills => this.skills = skills);
-  }
-
-  ngOnInit(): void {
-    this.getSkills();
-  }
+export class AppComponent {
 
 }

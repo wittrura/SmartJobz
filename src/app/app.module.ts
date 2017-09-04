@@ -15,6 +15,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { JobRolesComponent } from './job-roles/job-roles.component';
 import { CompaniesComponent } from './companies/companies.component';
 
+import { SkillService } from './skills/skill.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,7 @@ import { CompaniesComponent } from './companies/companies.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SkillService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
