@@ -24,7 +24,7 @@ export class CompaniesComponent implements OnInit {
     this.isInEditMode = false;
   }
 
-  add(name: string): void {
+  addCompany(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.companyService.create(name)
@@ -43,9 +43,17 @@ export class CompaniesComponent implements OnInit {
       this.editedCompany = company;
       console.log(this.isInEditMode);
       console.log(this.editedCompany);
-      // change company name from <p> to <input> with name placeholder
-      // change notes from <p> to <input> with notes placeholder
     }
+  }
+
+  saveEdits(company: Company): void {
+    // change company name from <p> to <input> with name placeholder
+    // change notes from <p> to <input> with notes placeholder
+    return;
+  }
+
+  deleteCompany(company: Company): void {
+    return;
   }
 
 }

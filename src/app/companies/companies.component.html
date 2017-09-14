@@ -1,7 +1,7 @@
 <h2>Companies</h2>
 <div>
   <label>New Company: </label><input #companyName />
-  <button (click)="add(companyName.value); companyName.value=''">
+  <button (click)="addCompany(companyName.value); companyName.value=''">
     Add
   </button>
 </div>
@@ -11,6 +11,7 @@
     <ng-container *ngIf="editedCompany && editedCompany.name === company.name">
       <div class="d-flex w-100 justify-content-between">
         <input type="text" class="form-control" value="{{ company.name }}"/>
+        <i class="fa fa-check pull-right" aria-hidden="true"></i>
         <i class="fa fa-pencil pull-right" aria-hidden="true" (click)="toggleEdit(company)"></i>
       </div>
         <input type="text" class="form-control" value="{{ company.notes }}" class="mb-1"/>
