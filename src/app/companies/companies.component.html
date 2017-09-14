@@ -1,18 +1,16 @@
 <h2>Companies</h2>
+<div>
+  <label>New Company: </label><input #companyName />
+  <button (click)="add(companyName.value); companyName.value=''">
+    Add
+  </button>
+</div>
 <ul class="list-group">
-  <li *ngFor="let company of companies" class="list-group-item
-  list-group-item-action flex-column align-items-start">
-    <div class="d-flex">
-      {{ company.name }}
+  <li *ngFor="let company of companies" class="list-group-item flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <p>{{ company.name }}</p>
+      <i class="fa fa-pencil pull-right" aria-hidden="true"></i>
     </div>
-    <p class="mb-1">{{ company.notes }}</p>
+      <p class="mb-1">{{ company.notes }}</p>
   </li>
 </ul>
-<!-- <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="list-group">
-  <ngb-panel *ngFor="let company of companies" title="{{ company.name }}"
-  class="list-group-item list-group-item-action">
-    <ng-template ngbPanelContent>
-      <p>{{ company.notes }}</p>
-    </ng-template>
-  </ngb-panel>
-</ngb-accordion> -->

@@ -21,4 +21,13 @@ export class CompaniesComponent implements OnInit {
     this.getCompanies();
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.companyService.create(name)
+      .then(company => {
+        this.companies.push(company);
+      });
+  }
+
 }

@@ -18,13 +18,6 @@ export const COMPANIES: Company[] = [
   {id: 10, name: 'BigCommerce', notes: 'Values work-life balance'},
 ];
 
-// export const COMPANIES: Company[] = [
-//   {id: 1, name: 'Full-Stack Engineer'},
-//   {id: 2, name: 'Backend Engineer'},
-//   {id: 3, name: 'QA Tester'},
-//   {id: 4, name: 'Customer Solutions Engineer'}
-// ];
-
 export const ROLES: Role[] = [
   {id: 1, name: 'Full-Stack Engineer'},
   {id: 2, name: 'Backend Engineer'},
