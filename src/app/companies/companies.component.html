@@ -7,10 +7,22 @@
 </div>
 <ul class="list-group">
   <li *ngFor="let company of companies" class="list-group-item flex-column align-items-start">
-    <div class="d-flex w-100 justify-content-between">
-      <p>{{ company.name }}</p>
-      <i class="fa fa-pencil pull-right" aria-hidden="true"></i>
-    </div>
+
+    <ng-container *ngIf="editedCompany && editedCompany.name === company.name">
+      <div class="d-flex w-100 justify-content-between">
+        <input type="text" class="form-control" value="{{ company.name }}"/>
+        <i class="fa fa-pencil pull-right" aria-hidden="true" (click)="toggleEdit(company)"></i>
+      </div>
+        <input type="text" class="form-control" value="{{ company.notes }}" class="mb-1"/>
+    </ng-container>
+
+    <ng-container *ngIf="!editedCompany || editedCompany.name !== company.name">
+      <div class="d-flex w-100 justify-content-between">
+        <p>{{ company.name }}</p>
+        <i class="fa fa-pencil pull-right" aria-hidden="true" (click)="toggleEdit(company)"></i>
+      </div>
       <p class="mb-1">{{ company.notes }}</p>
+    </ng-container>
+
   </li>
 </ul>

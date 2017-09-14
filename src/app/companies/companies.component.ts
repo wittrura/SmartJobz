@@ -10,6 +10,8 @@ import { Company } from './company';
 })
 export class CompaniesComponent implements OnInit {
   companies: Company[];
+  isInEditMode: boolean;
+  editedCompany: Company;
 
   constructor(private companyService: CompanyService) { }
 
@@ -19,6 +21,7 @@ export class CompaniesComponent implements OnInit {
 
   ngOnInit() {
     this.getCompanies();
+    this.isInEditMode = false;
   }
 
   add(name: string): void {
@@ -28,6 +31,21 @@ export class CompaniesComponent implements OnInit {
       .then(company => {
         this.companies.push(company);
       });
+  }
+
+  toggleEdit(company: Company): void {
+    if (this.isInEditMode && this.editedCompany === company) {
+      this.isInEditMode = false;
+      this.editedCompany = null;
+      return;
+    } else {
+      this.isInEditMode = true;
+      this.editedCompany = company;
+      console.log(this.isInEditMode);
+      console.log(this.editedCompany);
+      // change company name from <p> to <input> with name placeholder
+      // change notes from <p> to <input> with notes placeholder
+    }
   }
 
 }
