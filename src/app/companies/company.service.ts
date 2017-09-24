@@ -10,4 +10,8 @@ export class CompanyService {
     return Promise.resolve(COMPANIES);
   }
 
+  // createCompany(company): Promise<Company> {
+  //   return this.
+  // }
+
 }

@@ -11,6 +11,7 @@ import { Company } from './company';
 export class CompaniesComponent implements OnInit {
   companies: Company[];
   selectedCompany: Company;
+  isAddingNewCompany = false;
 
   constructor(private companyService: CompanyService) { }
 
@@ -30,4 +31,8 @@ export class CompaniesComponent implements OnInit {
     }
   }
 
+  onClickNewCompany(): void {
+    this.selectedCompany = null;
+    this.isAddingNewCompany = !this.isAddingNewCompany;
+  }
 }

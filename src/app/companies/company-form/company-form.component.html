@@ -1,0 +1,21 @@
+<div class="container">
+  {{diagnostic}}
+  <h2>New Company</h2>
+  <form #companyForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required
+             [(ngModel)]="model.name" name="name">
+      TODO: remove this: {{model.name}}
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea class="form-control" id="notes"
+                [(ngModel)]="model.notes" name="notes"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
