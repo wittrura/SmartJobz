@@ -10,10 +10,4 @@ export class CompanyService {
     return Promise.resolve(COMPANIES);
   }
 
-  create(name: string): Promise<Company> {
-    let newCompany: Company;
-    newCompany = {id: 10, name: name, notes: ''};
-    return Promise.resolve(newCompany);
-  }
-
 }

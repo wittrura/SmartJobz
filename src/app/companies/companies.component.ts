@@ -10,6 +10,7 @@ import { Company } from './company';
 })
 export class CompaniesComponent implements OnInit {
   companies: Company[];
+  selectedCompany: Company;
 
   constructor(private companyService: CompanyService) { }
 
@@ -21,8 +22,12 @@ export class CompaniesComponent implements OnInit {
     this.getCompanies();
   }
 
-  clickedCompany(company): void {
-    console.log(company);
+  onSelect(company): void {
+    if (this.selectedCompany === company) {
+      this.selectedCompany = null;
+    } else {
+      this.selectedCompany = company;
+    }
   }
 
 }

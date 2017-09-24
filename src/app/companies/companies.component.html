@@ -1,8 +1,17 @@
 <h2>Companies</h2>
 <ul class="list-group">
   <li *ngFor="let company of companies"
-  class="list-group-item"
-  (click)="clickedCompany(company)">
+  class="list-group-item list-group-item-action"
+  (click)="onSelect(company)"
+  [class.active]="company === selectedCompany">
     {{ company.name }}
   </li>
 </ul>
+<div *ngIf="selectedCompany">
+  <h2>{{selectedCompany.name}} details!</h2>
+  <div><label>id: </label>{{selectedCompany.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="selectedCompany.name" placeholder="name"/>
+  </div>
+</div>
