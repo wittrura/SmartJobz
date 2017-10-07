@@ -1,5 +1,5 @@
 export class Company {
-  id: number;
+  id?: number;
   name: string;
   notes: string;
   createdAt?: string;

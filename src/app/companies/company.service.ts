@@ -29,6 +29,14 @@ export class CompanyService {
                .catch(this.handleError);
   }
 
+  createCompany(company: Company): Promise<Company> {
+    console.log('create company service')
+    return this.http.post(this.companiesUrl, JSON.stringify(company), {headers: this.headers})
+               .toPromise()
+               .then((newCompany) => newCompany.json().data as Company)
+               .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

@@ -14,4 +14,7 @@
   </ul>
 </div>
 <app-company-detail [company]="selectedCompany"></app-company-detail>
-<app-company-form [hidden]="!isAddingNewCompany"></app-company-form>
+<app-company-form
+  [hidden]="!isAddingNewCompany"
+  [createHandler]="createCompany">
+</app-company-form>

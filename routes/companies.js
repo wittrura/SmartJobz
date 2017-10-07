@@ -14,6 +14,18 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.post('/', (req, res, next) => {
+  let newCompany = req.body;
+  knex('companies')
+    .insert({name: newCompany.name, notes: newCompany.notes}, '*')
+    .then((company) => {
+      res.status(200).json({data: company[0]});
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 router.patch('/:id', (req, res, next) => {
   let id = req.params.id;
   let updatedCompany = req.body;

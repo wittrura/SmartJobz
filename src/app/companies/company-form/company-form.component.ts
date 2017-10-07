@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { CompanyService } from '../company.service';
+
 import { Company } from '../company';
 
 @Component({
@@ -7,18 +10,33 @@ import { Company } from '../company';
   styleUrls: ['./company-form.component.css']
 })
 export class CompanyFormComponent implements OnInit {
-  model: Company;
+  newCompany: Company;
 
-  constructor() { }
+  @Input()
+  createHandler: Function;
+
+  constructor(private companyService: CompanyService) { }
 
   ngOnInit() {
-    this.model = {
-      id: 36,
-      name: 'RigUp',
-      notes: 'Oilfield services software'
+    this.newCompany = {
+      name: '',
+      notes: ''
     };
   }
 
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  // updates data via service and then calls handler passed from parent
+  onSubmit(company: Company): void {
+    company.name = company.name.trim();
+    if (!company.name) {
+      return;
+    }
+    this.companyService.createCompany(company)
+      .then((newCompany) => {
+        this.createHandler(newCompany);
+      });
+    this.newCompany = {
+      name: '',
+      notes: ''
+    };
+  }
 }

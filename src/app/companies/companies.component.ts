@@ -35,4 +35,12 @@ export class CompaniesComponent implements OnInit {
     this.selectedCompany = null;
     this.isAddingNewCompany = !this.isAddingNewCompany;
   }
+
+  // need to define function with arrow function to bind context when passing
+  // to child company-form component
+  createCompany = (company: Company) => {
+    this.companies.push(company);
+    this.selectedCompany = null;
+    this.isAddingNewCompany = false;
+  }
 }
