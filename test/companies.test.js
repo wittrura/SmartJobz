@@ -24,11 +24,3 @@ describe('GET /api/companies', function() {
       .expect(200, done);
   });
 });
-
-// describe("GET /companies", function() {
-//   it('returns all companies', function(done) {
-//     request.get('/api/companies')
-//       .expect('Content-Type', /json/)
-//       .expect(200, done);
-//   });
-// });
