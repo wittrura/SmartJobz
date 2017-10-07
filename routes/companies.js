@@ -44,6 +44,16 @@ router.patch('/:id', (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-})
+});
+
+router.delete('/:id', (req, res, next) => {
+  let id = req.params.id;
+  knex('companies')
+    .where({id: id})
+    .delete()
+    .then(() => {
+      res.status(204).send();
+    })
+});
 
 module.exports = router;

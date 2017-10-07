@@ -43,4 +43,15 @@ export class CompaniesComponent implements OnInit {
     this.selectedCompany = null;
     this.isAddingNewCompany = false;
   }
+
+  deleteCompany(company: Company): void {
+    this.companyService.deleteCompany(company.id)
+        .then(() => {
+          console.log('filtering companies')
+          this.companies = this.companies.filter(c => c !== company);
+          if (this.selectedCompany === company) {
+            this.selectedCompany = null;
+          }
+        });
+  }
 }

@@ -10,6 +10,7 @@
     (click)="onSelect(company)"
     [class.active]="company === selectedCompany">
       {{ company.name }}
+      <button class="delete" (click)="deleteCompany(company); $event.stopPropagation()">x</button>
     </li>
   </ul>
 </div>

@@ -30,10 +30,17 @@ export class CompanyService {
   }
 
   createCompany(company: Company): Promise<Company> {
-    console.log('create company service')
     return this.http.post(this.companiesUrl, JSON.stringify(company), {headers: this.headers})
                .toPromise()
                .then((newCompany) => newCompany.json().data as Company)
+               .catch(this.handleError);
+  }
+
+  deleteCompany(id: number): Promise<void> {
+    const url = this.companiesUrl + `/${id}`;
+    return this.http.delete(url, {headers: this.headers})
+               .toPromise()
+               .then(() => null)
                .catch(this.handleError);
   }
 
