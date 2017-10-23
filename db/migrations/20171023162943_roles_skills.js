@@ -1,21 +1,21 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('contacts_companies', (table) => {
+  return knex.schema.createTable('roles_skills', (table) => {
     table.increments();
-    table.integer('company_id')
+    table.integer('skill_id')
       .notNullable()
       .references('id')
-      .inTable('companies')
+      .inTable('skills')
       .onDelete('CASCADE');
-    table.integer('contact_id')
+    table.integer('role_id')
       .notNullable()
       .references('id')
-      .inTable('contacts')
+      .inTable('roles')
       .onDelete('CASCADE');
     table.timestamps(true, true);
   });
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('contacts_companies');
+  return knex.schema.dropTable('roles_skills');
 };

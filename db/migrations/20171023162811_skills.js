@@ -1,13 +1,13 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('companies', (table) => {
+  return knex.schema.createTable('skills', (table) => {
     table.increments();
     table.string('name').notNullable().defaultTo('');
-    table.string('notes').defaultTo('');
+    table.boolean('has_skill').notNullable().defaultTo(false);
     table.timestamps(true, true);
   });
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('companies');
+  return knex.schema.dropTable('skills');
 };
