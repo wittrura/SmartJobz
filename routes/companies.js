@@ -3,57 +3,15 @@ const router = express.Router();
 
 const knex = require('../db/knex');
 
-router.get('/', (req, res, next) => {
-  knex('companies')
-    .orderBy('id')
-    .then((companies) => {
-      res.status(200).json({data: companies});
-    })
-    .catch((err) => {
-      next(err);
-    });
-});
+const companies = require('../controllers/companies');
 
-router.post('/', (req, res, next) => {
-  let newCompany = req.body;
-  knex('companies')
-    .insert({name: newCompany.name, notes: newCompany.notes}, '*')
-    .then((company) => {
-      res.status(200).json({data: company[0]});
-    })
-    .catch((err) => {
-      next(err);
-    });
-});
-
-router.patch('/:id', (req, res, next) => {
-  let id = req.params.id;
-  let updatedCompany = req.body;
-  knex('companies')
-    .where({id: id})
-    .first()
-    .then((company) => {
-      if (!company) {
-        return next();
-      }
-      return knex('companies').where({ id: id }).update(updatedCompany, '*');
-    })
-    .then((company) => {
-      res.status(200).json({data: company[0]});
-    })
-    .catch((err) => {
-      next(err);
-    });
-});
-
-router.delete('/:id', (req, res, next) => {
-  let id = req.params.id;
-  knex('companies')
-    .where({id: id})
-    .delete()
-    .then(() => {
-      res.status(204).send();
-    })
-});
+router.get('/', companies.all);
+router.get('/:id', companies.get);
+// TODO - add validation
+// if invalid, return error
+// on front end, if error, provide response and confirm that nothing was created
+router.post('/', companies.create);
+router.patch('/:id', companies.update);
+router.delete('/:id', companies.destroy);
 
 module.exports = router;
